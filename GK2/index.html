@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Tường: Giấc Ngủ & Thận - Lớp 12A5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- PHẦN 1: Tiêu đề (Header) -->
+    <header id="header">
+        <h1>GIẤC NGỦ & THẬN</h1>
+        <p>Mối liên kết sống còn cho sức khỏe bền vững</p>
+    </header>
+
+    <!-- PHẦN 2: Nội dung chính -->
+    <main id="content">
+        
+        <!-- Lời ngỏ -->
+        <section class="section-box intro">
+            <h2>Vì sao cần quan tâm?</h2>
+            <p>Chúng ta thường nghe về tác hại của việc thức khuya đối với gan hay não, nhưng ít ai biết rằng <b>thời lượng giấc ngủ</b> có ảnh hưởng trực tiếp đến <b>nguy cơ suy thận</b>. Hãy cùng tìm hiểu những con số báo động!</p>
+        </section>
+
+        <!-- Bài viết chính -->
+        <section class="section-box articles">
+            <h2>Góc Khoa Học</h2>
+            <article class="post">
+                <h3 class="post-title">Ngủ ít hơn 5 tiếng: Nguy cơ cho thận</h3>
+                <p class="author">Biên tập: Học sinh Lớp 12A5</p>
+                <p>Nghiên cứu cho thấy những người ngủ ít hơn <b>5 giờ mỗi đêm</b> có tỉ lệ suy giảm chức năng thận nhanh hơn 65% so với người ngủ đủ 7-8 giờ. Thận có nhịp sinh học riêng, việc thức khuya khiến thận phải làm việc quá tải, không có thời gian phục hồi các tế bào tổn thương.</p>
+                <ul>
+                    <li><b>Áp lực máu:</b> Thiếu ngủ gây cao huyết áp - nguyên nhân hàng đầu dẫn đến suy thận.</li>
+                    <li><b>Đường huyết:</b> Giấc ngủ kém làm tăng nguy cơ tiểu đường, gây hại cho các bộ lọc của thận.</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Góc ảnh minh họa -->
+        <section class="section-box gallery">
+            <h2>Hình Ảnh: Thói Quen & Sức Khỏe</h2>
+            <div class="photo-grid">
+                <img src="hình ảnh/trong.jpg" alt="Giấc ngủ ngon">
+                <p class="caption">1. Giấc ngủ đủ giúp thận được "nghỉ ngơi" và thải độc tốt hơn.</p>
+                <img src="hình ảnh/than.png" alt="Khám sức khỏe">
+                <p class="caption">2. Kiểm tra định kỳ để bảo vệ "bộ lọc" của cơ thể.</p>
+            </div>
+        </section>
+
+        <!-- Video bổ trợ -->
+        <section class="section-box media">
+            <h2>Video: Nguyên nhân dẫn đến suy thận</h2>
+            <div class="video-container">
+                <!-- Sửa: Dùng thẻ <video> cho file lưu sẵn trong máy -->
+                <video width="100%" controls>
+                    <source src="video/video.mp4" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ video này.
+                </video>
+            </div>
+        </section>
+
+        <!-- Góc tương tác & Gmail -->
+        <section class="section-box comments">
+            <h2>Đóng Góp Ý Kiến</h2>
+            <form id="feedback-form">
+                <input type="text" id="sender-name" placeholder="Họ và tên của bạn..." required>
+                <textarea id="sender-message" placeholder="Chia sẻ cảm nghĩ hoặc góp ý cho báo tường..." required></textarea>
+                
+                <!-- Bấm nút này sẽ tự mở Gmail -->
+                <button type="button" onclick="sendToGmail()">Gửi đóng góp qua Gmail 📧</button>
+            </form>
+        </section>
+
+        <!-- PHẦN THÀNH VIÊN -->
+        <section class="section-box team">
+            <h2>Ban Thành Viên</h2>
+            <div class="team-grid">
+                <div class="member-card">
+                    <img src="hình ảnh/minhdat.jpg" alt="Avatar" class="member-avt" onclick="showAvatar(this.src)" style="cursor: zoom-in;">
+                    <strong class="member-name">Phạm Minh Đạt</strong>
+                    <span class="member-role">Vua</span>
+                </div>
+                <div class="member-card">
+                    <img src="hình ảnh/culi.jpg" alt="Avatar" class="member-avt" onclick="showAvatar(this.src)" style="cursor: zoom-in;">
+                    <strong class="member-name">Mai Bá Trọng</strong>
+                    <span class="member-role">Culi</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- KHUNG PHÓNG TO ẢNH -->
+    <div id="avatar-modal" class="modal" onclick="this.style.display='none'">
+        <img id="img-large" class="modal-content">
+        <p style="color:white; text-align:center; margin-top: 10px;">Bấm vào bất kỳ đâu để đóng ❌</p>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // 1. Hàm phóng to ảnh thành viên
+        function showAvatar(src) {
+            document.getElementById('avatar-modal').style.display = "block";
+            document.getElementById('img-large').src = src;
+        }
+
+        // 2. Hàm gửi Gmail nhận phản hồi
+        function sendToGmail() {
+            const name = document.getElementById('sender-name').value;
+            const message = document.getElementById('sender-message').value;
+            const myEmail = "gmail-cua-nhom-ban@gmail.com"; // THAY GMAIL CỦA BẠN VÀO ĐÂY
+
+            if (name === "" || message === "") {
+                alert("Vui lòng nhập đầy đủ tên và nội dung nhé!");
+                return;
+            }
+
+            const subject = encodeURIComponent("Đóng góp báo tường từ: " + name);
+            const body = encodeURIComponent("Họ tên: " + name + "\nNội dung: " + message);
+            
+            window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>

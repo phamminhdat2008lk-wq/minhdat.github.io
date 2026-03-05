@@ -1,0 +1,179 @@
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b132b;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* --- 2. TIÊU ĐỀ (HEADER) --- */
+#header {
+    background: linear-gradient(135deg, #1c2541 0%, #3a506b 100%);
+    color: #6fffe9;
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 3px solid #5bc0be;
+}
+
+#header h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* --- 3. KHUNG NỘI DUNG CHÍNH --- */
+#content {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.section-box {
+    background: #1c2541;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #3a506b;
+}
+
+.section-box h2 {
+    color: #6fffe9;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #3a506b;
+    padding-bottom: 10px;
+}
+
+/* --- 4. HÌNH ẢNH & VIDEO TRONG BÀI --- */
+.section-box img:not(.member-avt):not(.modal-content) {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin: 15px 0;
+}
+
+video, iframe {
+    width: 100%;
+    border-radius: 10px;
+    margin: 15px 0;
+    border: none;
+}
+
+/* --- 5. THÀNH VIÊN NHÓM --- */
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.member-card {
+    background: #0b132b;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #5bc0be;
+    width: 220px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px #6fffe9;
+}
+
+/* Ảnh đại diện nhỏ trong thẻ */
+.member-avt {
+    width: 120px !important;
+    height: 120px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+    border: 3px solid #6fffe9;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.member-name {
+    display: block;
+    color: #6fffe9;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.member-role {
+    display: block;
+    color: #8892b0;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+/* --- 6. PHÓNG TO ẢNH (MODAL) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    padding-top: 50px;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 400px; /* Đã chỉnh lại 400px để nhìn rõ hơn 200px */
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    border: 5px solid #6fffe9;
+    box-shadow: 0 0 30px rgba(111, 255, 233, 0.5);
+    animation: zoom 0.3s;
+}
+
+@keyframes zoom {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* --- 7. FORM & CHÂN TRANG --- */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #1c2541;
+    border: 1px solid #3a506b;
+    color: white;
+    border-radius: 8px;
+}
+
+button {
+    background: #6fffe9;
+    color: #0b132b;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #5bc0be;
+}
+
+#footer {
+    text-align: center;
+    padding: 40px;
+    background: #0b132b;
+    color: #5bc0be;
+    border-top: 1px solid #3a506b;
+}
